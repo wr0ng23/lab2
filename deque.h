@@ -10,6 +10,7 @@ public:
 	deque(const deque&);
 	~deque();
 	void display() const;
+	void display_size_of_deque() const;
 	bool empty() const;
 	void push_back(float);
 	float pop_back();

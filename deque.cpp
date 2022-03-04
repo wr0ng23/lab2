@@ -1,5 +1,6 @@
 #include <iostream>
 #include "deque.h"
+#include "safe_input.h"
 
 deque::deque(int size_mass = 10)
 {
@@ -42,6 +43,11 @@ void deque::display() const
 			std::cout << mass[i] << std::endl;
 	}
 	std::cout << std::endl;
+}
+
+void deque::display_size_of_deque() const
+{
+	std::cout << "Размер дэки: " << size << std::endl;
 }
 
 void deque::push_back(float var)
@@ -135,11 +141,11 @@ deque& deque::operator --()
 
 deque& operator++(deque& d1, int)
 {
-	float var;
-	std::cout << "Введите добавляемое число: "; std::cin >> var;
-	std::cout << "Введите куда нужно добавить число(1 - В начало дэка; 2 - В конец дэка): ";
-	int choice;
-	std::cin >> choice;
+	std::cout << "Введите добавляемое число\n";
+	float var = input<float>();
+	system("cls");
+	std::cout << "Введите куда нужно добавить число(1 - В начало дэка; 2 - В конец дэка)\n";
+	int choice = input<int>();
 	switch (choice)
 	{
 	case 1:
@@ -158,9 +164,8 @@ deque& operator--(deque& d1, int)
 {
 	if (d1.empty())
 		throw std::string("Дэк пуст!");
-	std::cout << "Введите откуда нужно извлечь число(1 - Из начала дэка; 2 - Из конца дэка): ";
-	int choice;
-	std::cin >> choice;
+	std::cout << "Введите откуда нужно извлечь число(1 - Из начала дэка; 2 - Из конца дэка)\n";
+	int choice = input<int>();
 	switch (choice)
 	{
 	case 1:
