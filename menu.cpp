@@ -121,46 +121,46 @@ void menu_Int()
 			int number = input<int>();
 			*Int1 = number;
 			cout << "Введите число 2\n"; number = input<int>();
-			*Int2 = number;
+			*Int2 = number; cout << endl;
 			pause_and_cls();
 			break;
 		}
 		case 2:
 			system("cls");
-			cout << "Результат сложения: " << *Int1 + *Int2 << endl;
+			cout << "Результат сложения: " << *Int1 + *Int2 << endl << endl;
 			pause_and_cls();
 			break;
 		case 3:
 			system("cls");
-			cout << "Результат вычитания: " << *Int1 - *Int2 << endl;
+			cout << "Результат вычитания: " << *Int1 - *Int2 << endl << endl;
 			pause_and_cls();
 			break;
 		case 4:
 			system("cls");
-			cout << "Результат умножения: " << *Int1 * (*Int2) << endl;
+			cout << "Результат умножения: " << *Int1 * (*Int2) << endl << endl;
 			pause_and_cls();
 			break;
 		case 5:
 			system("cls");
-			cout << "Результат деления: " << *Int1 / *Int2 << endl;
+			cout << "Результат деления: " << *Int1 / *Int2 << endl << endl;
 			pause_and_cls();
 			break;
 		case 6:
 			system("cls");
 			cout << "Число 1: " << *Int1 << endl;
-			cout << "Число2 2: " << *Int2 << endl;
+			cout << "Число2 2: " << *Int2 << endl << endl;
 			pause_and_cls();
 			break;
 		case 7:
 			system("cls");
-			cout << "Выход из программы..." << endl;
+			cout << "Выход из программы...\n";
 			delete Int1;
 			delete Int2;
 			exit(1);
 			break;
 		default:
 			system("cls");
-			cout << "Введена неверная цифра!" << endl;
+			cout << "Введена неверная цифра!\n";
 			system("pause");
 		}
 	}

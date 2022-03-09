@@ -35,7 +35,7 @@ bool deque::empty() const
 void deque::display() const
 {
 	if (empty())
-		throw std::string("Дэк пуст!");
+		throw std::string("Дэк пуст!\n");
 	std::cout << "Значения дэка: " << std::endl;
 	for (int i = 0; i < tail; i++)
 	{
@@ -47,7 +47,7 @@ void deque::display() const
 
 void deque::display_size_of_deque() const
 {
-	std::cout << "Размер дэки: " << size << std::endl;
+	std::cout << "Размер дэки: " << size << std::endl << std::endl;
 }
 
 void deque::push_back(float var)
@@ -55,7 +55,7 @@ void deque::push_back(float var)
 	if (tail < size)
 	{
 		mass[tail++] = var;
-		std::cout << "\nЧисло " << var << " было добавлено в конец дэка\n";
+		std::cout << "\nЧисло " << var << " было добавлено в конец дэка.\n\n";
 	}
 	else
 		throw std::string("\nВ конце дэка нет свободного места!");
@@ -73,7 +73,7 @@ void deque::push_front(float var)
 	if (head - 1 >= 0)
 	{
 		mass[--head] = var;
-		std::cout << "\nЧисло " << var << " было добавлено в начало дэка\n";
+		std::cout << "\nЧисло " << var << " было добавлено в начало дэка.\n\n";
 	}
 	else
 		throw std::string("\nВ начале дэка нет свободного места!");
@@ -116,7 +116,7 @@ deque deque::operator !() const
 deque& deque::operator ++()
 {
 	if (empty())
-		throw std::string("Дэк пуст!");
+		throw std::string("Дэк пуст!\n");
 	for (int i = 0; i < size; i++)
 	{
 		if (mass[i] != 0)
@@ -129,7 +129,7 @@ deque& deque::operator ++()
 deque& deque::operator --()
 {
 	if (empty())
-		throw std::string("Дэк пуст!");
+		throw std::string("Дэк пуст!\n");
 	for (size_t i = 0; i < size; i++)
 	{
 		if(mass[i] != 0)
@@ -155,7 +155,7 @@ deque& operator++(deque& d1, int)
 		d1.push_back(var);
 		break;
 	default:
-		std::cout << "Некорректная цифра!" << std::endl;
+		std::cout << "\nНекорректная цифра!\n" << std::endl;
 	}
 	return d1;
 }
@@ -163,19 +163,21 @@ deque& operator++(deque& d1, int)
 deque& operator--(deque& d1, int)
 {
 	if (d1.empty())
-		throw std::string("Дэк пуст!");
+		throw std::string("Дэк пуст!\n");
 	std::cout << "Введите откуда нужно извлечь число(1 - Из начала дэка; 2 - Из конца дэка)\n";
 	int choice = input<int>();
 	switch (choice)
 	{
 	case 1:
-		std::cout << "Извлеченное из начала дэка число: " << d1.pop_front() << std::endl;
+		std::cout << "\nИзвлеченное из начала дэка число: " << d1.pop_front() 
+			<< std::endl << std::endl;
 		break;
 	case 2:
-		std::cout << "Извлеченное из конца дэка число: " << d1.pop_back() << std::endl;
+		std::cout << "\nИзвлеченное из конца дэка число: " << d1.pop_back() 
+			<< std::endl << std::endl;
 		break;
 	default:
-		std::cout << "Некорректная цифра!" << std::endl;
+		std::cout << "\nНекорректная цифра!\n" << std::endl;
 	}
 	return d1;
 }

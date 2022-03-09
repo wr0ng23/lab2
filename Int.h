@@ -5,7 +5,7 @@ class Int
 private:
 	int number;
 public:
-	Int()
+	explicit Int()
 	{
 		number = 0;
 	}
